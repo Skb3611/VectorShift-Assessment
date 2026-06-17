@@ -8,13 +8,15 @@ export const SubmitButton = () => {
     const edges = useStore((state) => state.edges);
 
     const handleSubmit = async () => {
+        const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+        
         const pipelineData = {
             nodes: nodes.map(n => ({ id: n.id })),
             edges: edges.map(e => ({ source: e.source, target: e.target }))
         };
 
         try {
-            const response = await fetch('http://localhost:8000/pipelines/parse', {
+            const response = await fetch(`${backendUrl}/pipelines/parse`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
