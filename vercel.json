@@ -1,16 +1,6 @@
 {
-    "experimentalServices": {
-        "frontend": {
-            "root": "frontend",
-            "routePrefix": "/",
-            "framework": "create-react-app"
-        },
-        "backend": {
-            "root": "backend",
-            "routePrefix": "/_/backend",
-            "framework": "fastapi",
-            "entrypoint": "main.py",
-            "runtime": "@vercel/python"
-        }
-    }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/main.py" },
+    { "source": "/(.*)", "destination": "/frontend/$1" }
+  ]
 }
