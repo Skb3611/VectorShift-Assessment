@@ -4,7 +4,7 @@ import { cn } from '../lib/utils';
 export const BaseNode = ({ id, label, children, handles = [], selected }) => {
   return (
     <div className={cn(
-      "min-w-[200px] min-h-[80px] bg-white rounded-xl border-2 shadow-sm transition-all duration-200 flex flex-col gap-2 p-3 group",
+      "min-w-[160px] md:min-w-[200px] min-h-[70px] md:min-h-[80px] bg-white rounded-xl border-2 shadow-sm transition-all duration-200 flex flex-col gap-2 p-3 group",
       selected ? "border-primary ring-2 ring-primary/20 shadow-md" : "border-slate-200 hover:border-slate-300"
     )}>
       {handles.map((handle, index) => (
@@ -14,7 +14,7 @@ export const BaseNode = ({ id, label, children, handles = [], selected }) => {
           position={handle.position}
           id={`${id}-${handle.id}`}
           className={cn(
-            "!w-3 !h-3 !border-2 !border-white !transition-colors !duration-200",
+            "!w-4 !h-4 !border-2 !border-white !transition-colors !duration-200",
             handle.type === 'source' ? "!bg-primary hover:!bg-blue-600" : "!bg-slate-400 hover:!bg-slate-500"
           )}
           style={{ 
