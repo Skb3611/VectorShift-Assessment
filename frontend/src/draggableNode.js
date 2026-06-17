@@ -13,12 +13,9 @@ export const DraggableNode = ({ type, label }) => {
       event.dataTransfer.effectAllowed = 'move';
     };
 
-    const handlePointerDown = () => {
-      // For mobile/touch: Add node to center of screen on tap
-      // We use pointerDown to ensure it works across all touch/mouse devices
-      
-      // If it's a touch or a simple click, we can trigger the add
-      // We'll wait a bit to see if a drag starts, but for simplicity:
+    const handleAddNode = () => {
+      // Add node to center of screen on click/tap
+      // This works as a fallback for mobile and a shortcut for desktop
       const nodeID = getNodeID(type);
       const newNode = {
         id: nodeID,
@@ -37,7 +34,7 @@ export const DraggableNode = ({ type, label }) => {
         className="flex flex-col items-center justify-center min-w-[80px] h-[40px] px-4 rounded-lg border border-slate-200 bg-white text-slate-700 text-xs font-semibold cursor-grab transition-all hover:border-primary hover:text-primary hover:shadow-sm active:scale-95 active:bg-slate-50 select-none touch-manipulation"
         onDragStart={(event) => onDragStart(event, type)}
         onDragEnd={(event) => (event.target.style.cursor = 'grab')}
-        onPointerDown={handlePointerDown}
+        onClick={handleAddNode}
         draggable
       >
           <span>{label}</span>

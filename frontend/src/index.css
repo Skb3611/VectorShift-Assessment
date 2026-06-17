@@ -56,7 +56,13 @@
   body {
     @apply bg-background text-foreground;
     overscroll-behavior-y: none;
+    overflow: hidden; /* Prevent body scroll on mobile */
   }
+}
+
+/* Ensure React Flow container captures all touch events */
+.react-flow__pane {
+  touch-action: none !important;
 }
 
 @layer utilities {
