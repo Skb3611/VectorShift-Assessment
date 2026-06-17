@@ -68,6 +68,12 @@ export const useStore = create(
           }),
         });
       },
+      deleteNode: (nodeId) => {
+        set({
+          nodes: get().nodes.filter((node) => node.id !== nodeId),
+          edges: get().edges.filter((edge) => edge.source !== nodeId && edge.target !== nodeId),
+        });
+      },
       reset: () => {
         set({
           nodes: [],
