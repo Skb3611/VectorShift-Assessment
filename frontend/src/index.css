@@ -60,9 +60,9 @@
   }
 }
 
-/* Ensure React Flow container captures all touch events */
+/* Ensure React Flow container captures all touch events while allowing zoom */
 .react-flow__pane {
-  touch-action: none !important;
+  touch-action: pinch-zoom pan-x pan-y !important;
 }
 
 @layer utilities {

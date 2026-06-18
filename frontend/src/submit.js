@@ -40,7 +40,9 @@ export const SubmitButton = () => {
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-10 w-full max-w-[280px] sm:max-w-none sm:w-auto px-4 sm:px-0">
             <Button 
                 onClick={handleSubmit}
-                className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-10 rounded-xl md:rounded-2xl shadow-2xl shadow-primary/20 gap-2 md:gap-3 text-sm md:text-base font-bold transition-all active:scale-95 bg-slate-900 hover:bg-slate-800"
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto gap-2"
             >
                 <Play className="w-4 h-4 md:w-5 md:h-5 fill-current" />
                 Run Analysis

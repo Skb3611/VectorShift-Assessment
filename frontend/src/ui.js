@@ -114,12 +114,15 @@ export const PipelineUI = () => {
                     proOptions={proOptions}
                     snapGrid={[gridSize, gridSize]}
                     connectionLineType='smoothstep'
-                    panOnScroll={true}
-                    panOnDrag={true} // Simplified for better mobile support
-                    selectionOnDrag={false} // Disable to avoid conflict with panning
+                    panOnScroll={false}
+                    zoomOnScroll={true}
+                    panOnDrag={true}
+                    selectionOnDrag={false}
                     zoomOnPinch={true}
                     zoomOnDoubleClick={true}
                     preventScrolling={true}
+                    minZoom={0.1}
+                    maxZoom={2}
                 >
                     <Background color="#cbd5e1" gap={gridSize} />
                     <Controls className="!bg-white !border-slate-200 !shadow-lg !rounded-xl overflow-hidden" />
