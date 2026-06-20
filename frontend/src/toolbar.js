@@ -3,7 +3,8 @@
 import { DraggableNode } from "./draggableNode";
 import { useStore } from "./store";
 import { Button } from "./components/ui/button";
-import { RotateCcw, FileJson } from "lucide-react";
+import { RotateCcw, FileJson, Workflow } from "lucide-react";
+
 import { AnimatedThemeToggler } from "./components/theme-toggle";
 
 export const PipelineToolbar = () => {
@@ -11,16 +12,14 @@ export const PipelineToolbar = () => {
   const loadDefault = useStore((state) => state.loadDefaultPipeline);
 
   return (
-    <div className="sticky top-0 z-20 w-full bg-card/90 backdrop-blur-md border-b border-border shadow-sm transition-colors duration-300 flex flex-col md:flex-row md:items-center justify-between">
+    <div className="fixed bottom-0 z-20 w-full bg-card/90 backdrop-blur-md border-t border-border shadow-sm transition-colors duration-300 flex flex-col md:flex-row md:items-center justify-between">
       {/* Logo and Nodes Row */}
       <div className="flex items-center flex-1 min-w-0 py-3 md:py-4">
         <div className="flex items-center gap-2 px-4 md:px-6 border-r border-border shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">P</span>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+            <Workflow className="w-6 h-6" />
           </div>
-          <span className="font-bold text-card-foreground hidden xs:inline whitespace-nowrap">
-            Pipeline Builder
-          </span>
+
         </div>
 
         <div className="flex items-center gap-4 overflow-x-auto no-scrollbar touch-pan-x flex-1 px-4">
