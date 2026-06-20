@@ -40,7 +40,7 @@ export const SubmitButton = () => {
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-10 w-full max-w-[280px] sm:max-w-none sm:w-auto px-4 sm:px-0">
             <Button 
                 onClick={handleSubmit}
-                variant="outline"
+                variant="default"
                 size="lg"
                 className="w-full sm:w-auto gap-2"
             >

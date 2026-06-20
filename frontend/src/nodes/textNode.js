@@ -44,13 +44,13 @@ export const TextNode = ({ id, data, selected }) => {
   return (
     <BaseNode id={id} label="Text" handles={handles} selected={selected}>
       <div className="flex flex-col gap-1 w-full h-full">
-        <label className="text-[10px] font-medium text-slate-500 uppercase tracking-tight">
+        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
           Text
         </label>
         <textarea 
           value={currText} 
           onChange={handleTextChange} 
-          className="w-full px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none overflow-hidden min-h-[40px] font-sans"
+          className="w-full px-2 py-1.5 text-xs bg-muted border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all resize-none overflow-hidden min-h-[40px] font-sans"
           onInput={(e) => {
             e.target.style.height = 'auto';
             e.target.style.height = e.target.scrollHeight + 'px';

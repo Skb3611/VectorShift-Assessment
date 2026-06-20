@@ -13,11 +13,11 @@ export const LLMNode = ({ id, data, selected }) => {
   return (
     <BaseNode id={id} label="LLM" handles={handles} selected={selected}>
       <div className="flex flex-col gap-2">
-        <p className="text-xs text-slate-600 leading-relaxed">
+        <p className="text-xs text-muted-foreground leading-relaxed">
           Large Language Model component. Receives system instructions and user prompts.
         </p>
-        <div className="mt-2 py-1 px-2 bg-blue-50 rounded border border-blue-100">
-          <span className="text-[10px] font-semibold text-blue-700 uppercase">Ready</span>
+        <div className="mt-2 py-1 px-2 bg-primary/10 rounded border border-primary/20">
+          <span className="text-[10px] font-semibold text-primary uppercase">Ready</span>
         </div>
       </div>
     </BaseNode>

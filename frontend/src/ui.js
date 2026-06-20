@@ -18,7 +18,7 @@ import { ActionNode } from './nodes/actionNode';
 
 import 'reactflow/dist/style.css';
 
-const gridSize = 20;
+const gridSize = 25;
 const proOptions = { hideAttribution: true };
 const nodeTypes = {
   customInput: InputNode,
@@ -124,9 +124,9 @@ export const PipelineUI = () => {
                     minZoom={0.1}
                     maxZoom={2}
                 >
-                    <Background color="#cbd5e1" gap={gridSize} />
-                    <Controls className="!bg-white !border-slate-200 !shadow-lg !rounded-xl overflow-hidden" />
-                    <MiniMap className="!bg-white !border-slate-200 !shadow-lg !rounded-xl" />
+                    <Background   gap={gridSize} />
+                    <Controls className="!bg-card !border-border !shadow-lg !rounded-xl overflow-hidden" />
+                    <MiniMap className="!bg-card !border-border !shadow-lg !rounded-xl" />
                 </ReactFlow>
             </div>
         </div>
