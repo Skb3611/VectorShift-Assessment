@@ -15,7 +15,7 @@ export const PipelineToolbar = () => {
     <div className="fixed bottom-0 z-20 w-full bg-card/90 backdrop-blur-md border-t border-border shadow-sm transition-colors duration-300 flex flex-col md:flex-row md:items-center justify-between">
       {/* Logo and Nodes Row */}
       <div className="flex items-center flex-1 min-w-0 py-3 md:py-4">
-        <div className="flex items-center gap-2 px-4 md:px-6 border-r border-border shrink-0">
+        <div className="md:flex items-center gap-2 px-4 md:px-6 border-r border-border shrink-0 hidden ">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center">
             <Workflow className="w-6 h-6" />
           </div>
@@ -45,7 +45,6 @@ export const PipelineToolbar = () => {
           title="Load Example"
         >
           <FileJson className="w-4 h-4 md:w-4 md:h-4" />
-          <span className="md:hidden">Load Example</span>
         </Button>
         <Button
           variant="ghost"
@@ -55,7 +54,7 @@ export const PipelineToolbar = () => {
           title="Reset Canvas"
         >
           <RotateCcw className="w-4 h-4 md:w-4 md:h-4" />
-          <span className="md:hidden">Reset Canvas</span>
+         
         </Button>
         <AnimatedThemeToggler
           variant="ghost"

@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 import { useState, useRef, useCallback } from "react";
-import ReactFlow, { Controls, Background, MiniMap } from "reactflow";
+import ReactFlow, { Controls, Background, MiniMap, SimpleBezierEdge } from "reactflow";
 import { useStore } from "./store";
 import { shallow } from "zustand/shallow";
 import { InputNode } from "./nodes/inputNode";
@@ -106,7 +106,8 @@ export const PipelineUI = () => {
       <div ref={reactFlowWrapper} className="w-full h-full relative">
         <ReactFlow
           nodes={nodes}
-          edges={edges}
+          edges={edges} 
+          edgeTypes={{ simplebezier: SimpleBezierEdge }}
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
@@ -116,7 +117,9 @@ export const PipelineUI = () => {
           nodeTypes={nodeTypes}
           proOptions={proOptions}
           snapGrid={[gridSize, gridSize]}
-          connectionLineType="smoothstep"
+          connectionLineType="simplebezier"
+          defaultEdgeType="simplebezier"
+          edge
           panOnScroll={false}
           zoomOnScroll={true}
           panOnDrag={true}
@@ -128,9 +131,12 @@ export const PipelineUI = () => {
           maxZoom={2}
         >
           <Background gap={gridSize} />
-          <Controls className="!bg-card !border-border !shadow-lg !rounded-xl overflow-hidden" position="top-left"/>
+          <Controls
+            className="!bg-card !border-border !shadow-lg !rounded-xl overflow-hidden"
+            position="top-left"
+          />
           <MiniMap
-            className="!bg-card !border-border !shadow-lg !rounded-xl [&_svg]:rounded-lg"
+            className="!bg-card !border-border !shadow-lg !rounded-xl [&_svg]:rounded-lg hidden md:block"
             position="top-right"
           />
         </ReactFlow>

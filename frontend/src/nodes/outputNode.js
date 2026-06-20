@@ -29,7 +29,7 @@ export const OutputNode = ({ id, data, selected }) => {
     <BaseNode id={id} label="Output" handles={handles} selected={selected}>
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-medium text-slate-500 uppercase tracking-tight">
+          <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
             Name
           </label>
           <Input 
@@ -39,13 +39,13 @@ export const OutputNode = ({ id, data, selected }) => {
           />
         </div>
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] font-medium text-slate-500 uppercase tracking-tight">
+          <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
             Type
           </label>
           <select 
             value={outputType} 
             onChange={handleTypeChange}
-            className="w-full px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer"
+            className="w-full px-2 py-1.5 text-xs bg-muted border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all cursor-pointer"
           >
             <option value="Text">Text</option>
             <option value="File">Image</option>

@@ -45,15 +45,13 @@ export const useStore = create(
         set({
           edges: addEdge({
             ...connection, 
-            type: 'smoothstep', 
+            type: 'simplebezier', 
             animated: true, 
             markerEnd: {
               type: MarkerType.Arrow, 
               height: '20px', 
-              width: '20px',
-              color: '#3b82f6'
-            },
-            style: { stroke: '#3b82f6', strokeWidth: 2 }
+              width: '20px'
+            }
           }, get().edges),
         });
       },
@@ -144,10 +142,9 @@ export const useStore = create(
             target: 'llm-1',
             sourceHandle: 'input-1-value',
             targetHandle: 'llm-1-system',
-            type: 'smoothstep',
+            type: 'simplebezier',
             animated: true,
-            markerEnd: { type: MarkerType.Arrow, height: 20, width: 20, color: '#3b82f6' },
-            style: { stroke: '#3b82f6', strokeWidth: 2 }
+            markerEnd: { type: MarkerType.Arrow, height: 20, width: 20 }
           },
           {
             id: 'e-text-llm',
@@ -155,10 +152,9 @@ export const useStore = create(
             target: 'llm-1',
             sourceHandle: 'text-1-output',
             targetHandle: 'llm-1-prompt',
-            type: 'smoothstep',
+            type: 'simplebezier',
             animated: true,
-            markerEnd: { type: MarkerType.Arrow, height: 20, width: 20, color: '#3b82f6' },
-            style: { stroke: '#3b82f6', strokeWidth: 2 }
+            markerEnd: { type: MarkerType.Arrow, height: 20, width: 20 }
           },
           {
             id: 'e-llm-output',
@@ -166,10 +162,9 @@ export const useStore = create(
             target: 'output-1',
             sourceHandle: 'llm-1-response',
             targetHandle: 'output-1-value',
-            type: 'smoothstep',
+            type: 'simplebezier',
             animated: true,
-            markerEnd: { type: MarkerType.Arrow, height: 20, width: 20, color: '#3b82f6' },
-            style: { stroke: '#3b82f6', strokeWidth: 2 }
+            markerEnd: { type: MarkerType.Arrow, height: 20, width: 20 }
           }
         ];
 

@@ -21,7 +21,7 @@ export const FilterNode = ({ id, data, selected }) => {
   return (
     <BaseNode id={id} label="Filter" handles={handles} selected={selected}>
       <div className="flex flex-col gap-1 w-full">
-        <label className="text-[10px] font-medium text-slate-500 uppercase tracking-tight">
+        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
           Condition
         </label>
         <Input 

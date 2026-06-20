@@ -6,7 +6,6 @@ import { Play } from 'lucide-react';
 export const SubmitButton = () => {
     const nodes = useStore((state) => state.nodes);
     const edges = useStore((state) => state.edges);
-
     const handleSubmit = async () => {
         const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
         
@@ -37,12 +36,12 @@ export const SubmitButton = () => {
     };
 
     return (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-10 w-full max-w-[280px] sm:max-w-none sm:w-auto px-4 sm:px-0">
+        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-10 w-full max-w-[200px] sm:max-w-none sm:w-auto px-4 sm:px-0">
             <Button 
                 onClick={handleSubmit}
                 variant="default"
                 size="lg"
-                className="w-full sm:w-auto gap-2"
+                className="w-full sm:w-auto gap-2 border border-border"
             >
                 <Play className="w-4 h-4 md:w-5 md:h-5 fill-current" />
                 Run Analysis

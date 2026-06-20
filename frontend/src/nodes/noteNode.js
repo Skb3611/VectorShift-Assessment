@@ -14,14 +14,14 @@ export const NoteNode = ({ id, data, selected }) => {
   return (
     <BaseNode id={id} label="Note" handles={[]} selected={selected}>
       <div className="flex flex-col gap-1 w-full">
-        <label className="text-[10px] font-medium text-slate-500 uppercase tracking-tight">
+        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
           Note
         </label>
         <textarea 
           placeholder="Add a note..." 
           value={note}
           onChange={handleNoteChange}
-          className="w-full px-2 py-1.5 text-xs bg-amber-50/50 border border-amber-100 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-200/50 focus:border-amber-300 transition-all resize-none min-h-[60px] text-slate-700 italic"
+          className="w-full px-2 py-1.5 text-xs bg-muted border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all resize-none min-h-[60px] text-card-foreground italic"
         />
       </div>
     </BaseNode>

@@ -20,13 +20,13 @@ export const TransformNode = ({ id, data, selected }) => {
   return (
     <BaseNode id={id} label="Transform" handles={handles} selected={selected}>
       <div className="flex flex-col gap-1 w-full">
-        <label className="text-[10px] font-medium text-slate-500 uppercase tracking-tight">
+        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
           Operation
         </label>
         <select 
           value={transform}
           onChange={handleTransformChange}
-          className="w-full px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer font-medium text-slate-700"
+          className="w-full px-2 py-1.5 text-xs bg-muted border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all cursor-pointer font-medium text-card-foreground"
         >
           <option value="uppercase">Uppercase</option>
           <option value="lowercase">Lowercase</option>

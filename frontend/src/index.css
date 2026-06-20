@@ -162,3 +162,29 @@ code {
 html[data-magicui-theme-vt="active"]::view-transition-group(root) {
   animation-duration: var(--magicui-theme-toggle-vt-duration);
 }
+
+/* React Flow Edge Styles */
+.react-flow__edge-path {
+  stroke: oklch(var(--primary));
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: oklch(var(--ring));
+  stroke-width: 3;
+}
+
+.react-flow__edge-arrow {
+  fill: oklch(var(--primary));
+}
+
+.react-flow__edge.selected .react-flow__edge-arrow {
+  fill: oklch(var(--ring));
+}
+
+/* React Flow Connection Line Styles */
+.react-flow__connection-path,
+.react-flow__connection line {
+  stroke: oklch(var(--primary)) !important;
+  stroke-width: 2 !important;
+}

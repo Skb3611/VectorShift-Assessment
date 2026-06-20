@@ -11,10 +11,10 @@ export const LogicNode = ({ id, data, selected }) => {
   return (
     <BaseNode id={id} label="Logic" handles={handles} selected={selected}>
       <div className="flex flex-col gap-2">
-        <p className="text-xs text-slate-600 leading-relaxed italic">
+        <p className="text-xs text-muted-foreground leading-relaxed italic">
           Branching logic based on input.
         </p>
-        <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">
+        <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">
           <span>False</span>
           <span>True</span>
         </div>
