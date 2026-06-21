@@ -36,7 +36,10 @@ export const useStore = create(
       },
       onEdgesChange: (changes) => {
         set({
-          edges: applyEdgeChanges(changes, get().edges),
+          edges: applyEdgeChanges(changes, get().edges).map(edge => ({
+            ...edge,
+            type: edge.type || 'simplebezier'
+          })),
         });
       },
       onConnect: (connection) => {
@@ -80,6 +83,7 @@ export const useStore = create(
         });
       },
       loadDefaultPipeline: () => {
+        localStorage.removeItem('pipeline-storage');
         const isMobile = window.innerWidth < 768;
         const centerX = window.innerWidth / 2 - 100; // Assuming node width ~200px
 
